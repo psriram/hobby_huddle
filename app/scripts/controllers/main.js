@@ -18,6 +18,7 @@
 	}]);
   angular.module('hobbyhuddleApp').controller('MainCtrl',['$scope',function ($scope) {
   	//alert("hello");
+    
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',

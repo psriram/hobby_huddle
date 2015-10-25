@@ -17,5 +17,6 @@ angular.module('hobbyhuddleApp', [
     'ngTouch',
     'firebase',
     'firebase.ref',
-    'firebase.auth'
+    'firebase.auth',
+    'ngAutocomplete'
   ]);
