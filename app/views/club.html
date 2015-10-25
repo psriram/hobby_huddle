@@ -1,0 +1,113 @@
+<!--<div class="container">
+<link href="scripts/autocomplete/jquery.autocomplete.css" rel="stylesheet" type="text/css">
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places"></script>-->
+
+<div ng-include="'views/club_header.html'"></div>
+<style>
+         #controls {
+            position: relative;
+            width: 480px;
+          }
+          /*#autocomplete {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 80%;
+          }*/
+          .label {
+            text-align: right;
+            font-weight: bold;
+            width: 100px;
+            color: #303030;
+          }
+          #address {
+            border: 1px solid #000090;
+            background-color: #f0f0ff;
+            width: 480px;
+            padding-right: 2px;
+          }
+          #address td {
+            font-size: 10pt;
+          }
+          .field {
+            width: 99%;
+          }
+          .slimField {
+            width: 80px;
+          }
+          .wideField {
+            width: 200px;
+          }
+         .locationField{
+             position: relative;
+             width: 480px;
+             height: 20px;
+             margin-bottom: 2px;
+          }
+          .classField{
+             position: relative;
+             width: 280px;
+             height: 20px;
+             margin-bottom: 2px;
+          }
+          .scheduleField{
+             position: relative;
+             width: 280px;
+             height: 20px;
+             margin-bottom: 2px;
+          }
+</style>
+<div class="row text-center">
+     <p></p>
+    </div>
+     <div class="row text-center">
+     <p></p>
+    </div>
+     <hr />
+    <div class="row">
+        <form role="form" method="post" name="formJoin" id="formJoin" >
+            <div class="col-lg-6">
+                <div class="well well-sm"><strong><span><span></span><span> Club Details </span></div>
+
+                <div class="form-group">
+                    <label for="InputName">Club Name</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" ng-model="club.name" placeholder="Enter Name" value="" required>
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                    </div>
+                </div>
+
+                 <div class="form-group">
+                    <label for="InputName">Club Phone</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" ng-model="club.phone" placeholder="Enter Phone" value="" required>
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                  <label for="InputWebSite">Website</label>
+
+                  <div class="input-group">
+                      <input type="text" class="form-control" ng-model="club.website" value="">
+                      <span class="input-group-addon"><span class=""></span></span>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="InputDetails">Details</label>
+                  <div class="input-group">
+                      <textarea class="form-control" ng-model="club.details"  placeholder="Enter Details" cols="68" rows="7"></textarea>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <div class="input-group">
+                     <input type="button" name="btnSaveClub" id="btnSaveClub" value="Next" class="btn btn-info pull-right">
+                  </div>
+                </div>
+
+            </div>
+
+        </form>
+
+    </div>
+</div>

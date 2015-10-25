@@ -1,0 +1,138 @@
+
+<div class="divide40"></div>
+        <form id="searchForm" method="post">
+        <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+            <div class="purchase-section ">
+                <div class="row">
+                    <div class="col-md-4">
+                            <div class="dropdown">
+                                  <input
+                                    id="mainKeywords"
+                                    class="dropdown-toggle"
+                                    data-toggle="dropdown"
+                                    type="text"
+                                    name="keywords"
+                                    size="50"
+                                    maxlength="100"
+                                    value=""
+                                    placeholder="All Activities"
+                                    />
+
+                                  <ul class="dropdown-menu" id="simple-criteria" role="menu" aria-labelledby="dropdownMenu1">
+                                      <li role="presentation">
+                                         <a role="menuitem" tabindex="-1" href="javascript:;" data-key="soccer" data-name="soccer">Soccer</a>
+                                      </li>
+                                      <li role="presentation">
+                                         <a role="menuitem" tabindex="-1" href="javascript:;" data-key="lacrosse" data-name="lacrosse">Lacrosse</a>
+                                      </li>
+                                      <li role="presentation">
+                                         <a role="menuitem" tabindex="-1" href="javascript:;" data-key="karate" data-name="karate">
+                                           Karate
+                                         </a>
+                                      </li>
+                                      <li role="presentation" class="divider"></li>
+                                      <li role="presentation">
+                                         <a role="menuitem" tabindex="-1" href="javascript:;" data-key="baseball" data-name="baseball">Baseball</a>
+                                      </li>
+                                   </ul>
+
+                                </div>
+                       </div>
+                      <div class="col-md-1">
+                                within
+                     </div>
+                       <div class="col-md-1">
+
+                            <div class="dropdown">
+
+                                <a href="javascript:;" id="lnkradius"class="dropdown-toggle"  data-toggle="dropdown">5</a> miles
+                                <ul class="dropdown-menu" id="simple-radius">
+                                    <li><a href="javascript:;" data-value="2" data-copy="2">
+                                    2
+                                    </a></li>
+                                    <li><a href="javascript:;" data-value="10" data-copy="10">
+                                    10
+                                </a></li>
+                                </ul>
+                                 <input type="hidden" id="hdnRadius" name="hdnRadius" value="5"/>
+                            </div>
+
+                     </div>
+                       <div class="col-md-1">
+                               of
+                     </div>
+                    <div class="col-md-3">
+                             <div id="locationField">
+                              <input id="autocomplete" placeholder="Enter your city"
+                                     onFocus="geolocate()" type="text"></input>
+                                     <input type="hidden" id="hdnLat" name="hdnLat"/>
+                               <input type="hidden" id="hdnLong" name="hdnLong"/>
+                            </div>
+                      </div>
+                      <div class="col-md-1">
+                            <input type="submit" name="go" id="go" value="Go" /><br />
+                      </div>
+
+                </div>
+            </div>
+          </div>
+        </div>
+
+        </div>
+       </form>
+
+ <script>
+             $( document ).ready(function() {
+                initialize();
+                /*$("#btnSignIn").click(function(){
+                    alert("here");
+                    window.location.href="#/login";
+                });*/
+
+            });
+            var placeSearch, autocomplete;
+            var componentForm = {
+              street_number: 'short_name',
+              route: 'long_name',
+              locality: 'long_name',
+              administrative_area_level_1: 'short_name',
+              country: 'long_name',
+              postal_code: 'short_name'
+            };
+
+            function initialize() {
+
+              autocomplete = new google.maps.places.Autocomplete(
+                  /** @type {HTMLInputElement} */(document.getElementById('autocomplete')),
+                 // { types: ['geocode'] });
+                 { types: ['(cities)'] });
+              // When the user selects an address from the dropdown,
+              // populate the address fields in the form.
+              google.maps.event.addListener(autocomplete, 'place_changed', function() {
+                fillInAddress();
+              });
+            }
+
+            // [START region_fillform]
+            function fillInAddress() {
+              // Get the place details from the autocomplete object.
+              var place = autocomplete.getPlace();
+              document.getElementById("hdnLat").value = place.geometry.location.lat();
+              document.getElementById("hdnLong").value = place.geometry.location.lng();
+
+            }
+
+            function geolocate() {
+              if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function(position) {
+                  var geolocation = new google.maps.LatLng(
+                      position.coords.latitude, position.coords.longitude);
+                  autocomplete.setBounds(new google.maps.LatLngBounds(geolocation,
+                      geolocation));
+                });
+              }
+            }
+
+      </script>

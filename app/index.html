@@ -1,0 +1,124 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link href="styles/style.css" rel="stylesheet" type="text/css" media="screen">
+    <link href="styles/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <!-- flex slider css -->
+    <link href="styles/flexslider.css" rel="stylesheet" type="text/css" media="screen">
+    <!-- animated css  -->
+    <link href="styles/animate.css" rel="stylesheet" type="text/css" media="screen">
+    <!--owl carousel css-->
+    <link href="styles/owl.carousel.css" rel="stylesheet" type="text/css" media="screen">
+    <link href="styles/owl.theme.css" rel="stylesheet" type="text/css" media="screen">
+    <script type="text/javascript" src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=places"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link href="scripts/autocomplete/jquery.autocomplete.css" rel="stylesheet" type="text/css">
+
+
+ </head>
+
+ <body ng-app="hobbyhuddleApp" ng-controller="appCtrl">
+          <div class="top-bar-wrap hidden-xs">
+            <div class="container">
+                <div class="top-bar">
+                    <div class="pull-left pull-left_color">
+
+                        <button id="btnRegisterLeague" ng-click="go('/club')" class="btn btn-theme-bg">Register
+                        </button>
+                    </div>
+                    <div class="pull-right pull-left_color">
+                       <button ng-hide-auth="" id="btnSignIn" ng-click="go('/account')" class="btn btn-theme-bg">Log In
+                        </button>
+                    </div>
+                    <div class="pull-right pull-left_color">
+                         <button ng-show-auth="" id="btnAccount" ng-click="go('/account')" class="btn btn-theme-bg">Account
+                        </button>
+                    </div>
+
+
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="container">
+        <div ng-view=""></div>
+    </div>
+
+  <footer id="footer">
+
+  </footer><!--footer end-->
+
+
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+     <script>
+       !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
+       (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
+       r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
+       }(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+       ga('create', 'UA-XXXXX-X');
+       ga('send', 'pageview');
+    </script>
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/firebase/firebase.js"></script>
+    <script src="bower_components/angularfire/dist/angularfire.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="scripts/app.js"></script>
+        <script src="scripts/controllers/main.js"></script>
+        <script src="scripts/controllers/club.js"></script>
+        <script src="scripts/angularfire/config.js"></script>
+        <script src="scripts/angularfire/firebase.ref.js"></script>
+        <script src="scripts/controllers/chat.js"></script>
+        <script src="scripts/filters/reverse.js"></script>
+        <script src="scripts/angularfire/auth.js"></script>
+        <script src="scripts/controllers/login.js"></script>
+        <script src="scripts/controllers/account.js"></script>
+        <script src="scripts/directives/ngShowAuth.js"></script>
+        <script src="scripts/directives/ngHideAuth.js"></script>
+        <script src="scripts/routes.js"></script>
+        <!-- endbuild -->
+</body>
+</html>
